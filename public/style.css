@@ -6,11 +6,12 @@
 #header{
 background-color:rgb(211, 211, 211);
 border-bottom:1px solid black;
-height:10vh;
 width:100vw;
 display: flex;
 align-items:center;
+height:100px;
 padding:auto;
+color:white; 
 }
 #header>h1{
   margin:auto;
@@ -27,6 +28,9 @@ padding:auto;
   height:50vh;
   border-radius:5px;
   border:1px solid black;
+}
+#form-justify>label{
+  font-size:14px;
 }
 #overlay{
   display:none;

@@ -18,7 +18,8 @@ const showOverlay=(text)=>{
 
 $("#submitBtn").click(function(e) {
   
-        var formText = document.getElementById("form-justify")[0];
+        var formText = document.querySelector("#form-justify > textArea");
+        console.log(formText)
         e.preventDefault();
         $.ajax({
             type: 'POST',
@@ -26,8 +27,11 @@ $("#submitBtn").click(function(e) {
             data: formText.value,
             processData: false,
             contentType: "text/plain",
+            
         }).then(msg=>{
+          
           showOverlay(msg)
+          
 
         });
 })

@@ -4,13 +4,17 @@ var bodyParser = require('body-parser')
 var app = express();
 
 const justify=function(text){
-  resultat=text.replace(/(\r\n|\n|\r)/gm, "").split(' ') //on tout retire les saut de ligne
+resultat=text.replace(/(\r\n|\n|\r)/gm, "").split(' ') //on tout retire les saut de ligne
   resfinal=[]
   resfinal.push('')
   t=0
   for(let i =0;i<resultat.length;i++){
     if((resfinal[t].length+resultat[i].length)<=80){
       resfinal[t]+=resultat[i]+" ";
+    }else if(resultat[i].length>=80){
+        resfinal[t]+=resultat[i]+" ";
+    resfinal.push('')
+    t++
     }else{
     resfinal.push('')
     t++
@@ -52,6 +56,7 @@ app.post('/api/justify',(req,res)=>{
   textp=req.body
   res.set('Content-Type', 'text/plain')
   textp=justify(textp).join('</br>')
+  console.log(textp)
   res.send(textp)
   res.status(200)
   
