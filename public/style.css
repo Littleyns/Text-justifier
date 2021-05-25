@@ -1,0 +1,56 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+#header{
+background-color:rgb(211, 211, 211);
+border-bottom:1px solid black;
+height:10vh;
+width:100vw;
+display: flex;
+align-items:center;
+padding:auto;
+}
+#header>h1{
+  margin:auto;
+}
+#form-justify{
+  display: flex;
+  flex-direction:column;
+  margin:25%;
+  margin-top:20px;
+  margin-bottom:0px;
+  
+}
+#form-justify>textarea{
+  height:50vh;
+  border-radius:10px;
+}
+#overlay{
+  display:none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  top:0;
+  width:100vw;
+  height:100vh;
+  font-family:monospace;
+ z-index:998;
+}
+#overlayContent{
+
+  display: flex;
+  justify-content:center;
+  position:relative;
+  top:15vh;
+  background-color:white;
+ width:45vw;
+ border-radius:10px;
+ margin:auto;
+  z-index:999;
+
+}
+#overlayContent>p{
+margin:30px;
+}
