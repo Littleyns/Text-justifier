@@ -51,6 +51,7 @@ color:white;
 }
 #overlayContent>p{
 margin:30px;
+font-size:20px;
 }
 #windowxp{
   width:70vw;
@@ -60,4 +61,17 @@ margin:30px;
 #submitBtn{
   margin-top:20px;
   height:40px;
+}
+#copyIcon{
+  float:right;
+  margin:10px;
+  color:black;
+  opacity:0.7;
+  border-radius:5px;
+  width:50px;
+  height:50px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid grey;
 }
