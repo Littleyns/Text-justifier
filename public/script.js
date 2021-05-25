@@ -37,7 +37,6 @@ const showOverlay=(text)=>{
 $("#submitBtn").click(function(e) {
   
         var formText = document.querySelector("#form-justify > textArea");
-        console.log(formText)
         e.preventDefault();
         $.ajax({
             type: 'POST',
@@ -47,9 +46,8 @@ $("#submitBtn").click(function(e) {
             contentType: "text/plain",
             
         }).then(msg=>{
-          
+         
           showOverlay(msg)
-          
 
         });
 })
@@ -61,8 +59,22 @@ $("button[aria-label=Close]").click(e=>{
   
   fermerPopup();
 })
+$("#randomTxt").click((e)=>{
+  e.preventDefault()
+  $.ajax({
+            type: 'GET',
+            url: 'https://baconipsum.com/api/?type=meat-and-filler',
+            //data: formText.value,
+            //processData: false,
+            //contentType: "text/plain",
+            
+        }).then(msg=>{
+          document.querySelector("textArea[name=text]").value=msg[0]
+          console.log(msg[0])
 
-//////////////////////////////////////////
+        });
+})
+/////////////Copy icon///////////////////
 var btncopy = document.querySelector('#copyIcon');
 if(btncopy) {
     btncopy.addEventListener('click', docopy);
@@ -86,16 +98,15 @@ function docopy() {
         var result = document.execCommand('copy');
         if (result) {
          changeStateCopy(true);
-             
-            //alert('Copié !');
+       
         }
     }
     catch(err) {
-        // Une erreur est surevnue lors de la tentative de copie
+        
         alert(err);
     }
 
-    // Fin de l'opération
+  
     selection = window.getSelection();
     if (typeof selection.removeRange === 'function') {
         selection.removeRange(range);
@@ -103,3 +114,4 @@ function docopy() {
         selection.removeAllRanges();
     }
 }
+//////////////////////////////////////////////////

@@ -29,7 +29,7 @@ color:white;
   border-radius:5px;
   border:1px solid black;
 }
-#form-justify>label{
+#form-justify label{
   font-size:14px;
 }
 #overlay{
@@ -61,6 +61,7 @@ font-size:20px;
 #submitBtn{
   margin-top:20px;
   height:40px;
+  font-size:20px;
 }
 #copyIcon{
   float:right;
@@ -74,4 +75,12 @@ font-size:20px;
   justify-content:center;
   align-items:center;
   border:1px solid grey;
+}
+#formHeader{
+  display:flex;
+  align-items:center;
+}
+#formHeader > button{
+  margin-left:10px;
+  margin-top:-6px;
 }
