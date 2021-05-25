@@ -1,11 +1,16 @@
 
+const fermerPopup=()=>{
+overlay=document.getElementById('overlay')
+  overlay.style.display='none'
+    document.getElementById('overlayContent').removeChild(document.getElementById('overlayContent').firstChild);
+}
 const showOverlay=(text)=>{
   overlay=document.getElementById('overlay')
   overlay.style.display='block'
  
     justifiedText=document.createElement('p')
   justifiedText.innerHTML=text
-  overlay.children[0].appendChild(justifiedText)
+  document.getElementById('overlayContent').appendChild(justifiedText)
   
   
   
@@ -28,7 +33,9 @@ $("#submitBtn").click(function(e) {
 })
 $("#overlay").click(e=>{
   if(e.target !== e.currentTarget) return;
-  overlay=document.getElementById('overlay')
-  overlay.style.display='none'
-  overlay.children[0].removeChild(overlay.children[0].firstChild);
+  fermerPopup();
+})
+$("button[aria-label=Close]").click(e=>{
+  
+  fermerPopup();
 })

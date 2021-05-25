@@ -25,7 +25,8 @@ padding:auto;
 }
 #form-justify>textarea{
   height:50vh;
-  border-radius:10px;
+  border-radius:5px;
+  border:1px solid black;
 }
 #overlay{
   display:none;
@@ -40,17 +41,19 @@ padding:auto;
 }
 #overlayContent{
 
-  display: flex;
-  justify-content:center;
-  position:relative;
-  top:15vh;
-  background-color:white;
- width:45vw;
- border-radius:10px;
- margin:auto;
-  z-index:999;
+ display: flex;
+ justify-content:center;
 
 }
 #overlayContent>p{
 margin:30px;
+}
+#windowxp{
+  width:70vw;
+  margin:auto;
+  margin-top:10vh;
+}
+#submitBtn{
+  margin-top:20px;
+  height:40px;
 }

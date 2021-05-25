@@ -6,15 +6,19 @@
   <link href="/public/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <title>Justifier un texte</title>
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css"
+>
 </head>
 <body>
  
-  <header id="header"><h1>text justifier</h1></header>
+  <header id="header"><h1>Text Justifier <span style="font-size:19px;">2000's edition</span></h1></header>
   <main>
     <div id="form_container">
-      <form  class="form-group" id="form-justify" name="form-justify">
+      <form   id="form-justify" name="form-justify">
       <label for="text" name="label">Entrez le texte à justifier</label>
-      <textarea placeholder="HTML est un langage de programmation" name="text"></textarea>          <button type="button" class="btn btn-primary" id="submitBtn">Justifier !</button>
+      <textarea placeholder="HTML est un langage de programmation" name="text"></textarea>          <button type="button"  id="submitBtn">Justifier !</button>
         </form>
         
 </div>
@@ -24,8 +28,18 @@
   </main>
 
 <div id="overlay">
+<div class="window"  id="windowxp">
+  <div class="title-bar">
+    <div class="title-bar-text">Le texte justifié, enfin j'espere, ne poussez pas mon algorithme à bout s'il vous plait</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize" ></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body" id="overlayContent"></div>
+</div>
 
-  <div id="overlayContent"></div>
 </div>
 </body>
 <script src="/public/script.js" </script>
