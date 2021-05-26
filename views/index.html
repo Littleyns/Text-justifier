@@ -26,7 +26,22 @@
 
 
   </main>
-
+<div id="overlayToken">
+  <div class="window" id="windowToken">
+    <div class="title-bar">
+    <div class="title-bar-text">Entrez votre adresse mail</div>
+  </div>
+  <div class="window-body" id="overlayTokenContent">
+    <form action="api/token" method="post" id="tokenForm" name"tokenForm">
+      <label for="mailInput">Entrez votre adresse mail</label>
+      <input id="mailInput" type="email" name="mailInput" placeholder="john@doe.fr" required>
+      <label for="limit">entrez une limite (pour test)</label>
+      <input id="limit" type="number" name="limit" placeholder="80000" required>
+      <button type="button" id="submitMail">Envoyer</input>
+      </form>
+    </div>
+    </div>
+  </div>
 <div id="overlay">
 <div class="window"  id="windowxp">
   <div class="title-bar">

@@ -84,3 +84,32 @@ font-size:20px;
   margin-left:10px;
   margin-top:-6px;
 }
+#overlayToken{
+ display:flex;
+  justify-content:center;
+  align-items:center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  top:0;
+  width:100vw;
+  height:100vh;
+  font-family:monospace;
+ z-index:998;
+
+}
+#windowToken{
+  width:70vw;
+  
+}
+#tokenForm{
+  display: flex;
+  flex-direction:column;
+  
+}
+#tokenForm > *{
+  font-size:20px;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:5px;
+}

@@ -1,3 +1,11 @@
+$(document).ready((e)=>{
+  if(document.cookie){
+    overlay=document.getElementById('overlayToken')
+    overlay.style.display='none';
+  token=document.cookie.split(';')[1].split('=')[1]
+console.log(document.cookie)
+  }
+})
 const changeStateCopy=(bool)=>{
 if(bool){
  copybtn=document.querySelector("#copyIcon")
@@ -34,6 +42,20 @@ const showOverlay=(text)=>{
 
 }
 
+$("#submitMail").click(function(e) {
+        const formText = $('#tokenForm')
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/api/token',
+            data: formText.serialize(),
+            processData: false,
+            contentType: "application/x-www-form-urlencoded",     
+        }).then(msg=>{
+          document.getElementById('overlayToken').style.display="none"
+
+        });
+})
 $("#submitBtn").click(function(e) {
   
         var formText = document.querySelector("#form-justify > textArea");
@@ -70,7 +92,6 @@ $("#randomTxt").click((e)=>{
             
         }).then(msg=>{
           document.querySelector("textArea[name=text]").value=msg[0]
-          console.log(msg[0])
 
         });
 })
